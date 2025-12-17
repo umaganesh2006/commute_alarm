@@ -4,7 +4,11 @@
 # 1. API KEYS (We will get these next!)
 # ==========================================
 # Get this from: https://console.cloud.google.com/
-TOMTOM_API_KEY = "yLLDAIHZ0n4rEpMZk03K32CQ8nhbZsSS"
+try:
+    TOMTOM_API_KEY = st.secrets["TOMTOM_API_KEY"]
+except:
+    # Fallback for local testing if secrets aren't set up locally
+    TOMTOM_API_KEY = "YOUR_REAL_KEY_HERE"
 # Get this from: https://openweathermap.org/api
 OPENWEATHER_API_KEY = "ec8fe1875ab6a4d2d3f9cf0e757af597"
 
